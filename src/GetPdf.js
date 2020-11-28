@@ -6,7 +6,7 @@ const url = 'http://xn--d1abafrgaft.xn--p1ai//student/'
 const date = new Date();
 const numDay = date.getDay()
 const day = date.getDate();
-const dir = './pdfs/ebola/'
+const dir = './pdfs/'
 const name = 'schedule.pdf'
 const options = {
     directory: dir,

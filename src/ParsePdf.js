@@ -1,4 +1,4 @@
-const dir = './pdfs/ebola/'
+const dir = './pdfs/'
 const name = 'schedule.pdf'
 const PDFExtract = require('pdf.js-extract').PDFExtract;
 const pdfExtract = new PDFExtract();
