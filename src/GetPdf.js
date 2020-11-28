@@ -15,7 +15,7 @@ const options = {
 module.exports.GetPdf = (l, callback) => {
     const getHref = () => {
         if (numDay === 6) return `[href*='/student/Расписание ${day + 2}']`
-        if (numDay === 7) return `[href*='/student/Расписание ${day + 1}']`
+        if (numDay === 0) return `[href*='/student/Расписание ${day + 1}']`
         return `[href*='/student/Расписание ${day}']`
     }
     JSDOM.fromURL(url, {}).then(dom => {
