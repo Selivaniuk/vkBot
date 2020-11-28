@@ -35,7 +35,7 @@ bot.on((ctx) => {
             })
 
         }
-        ctx.reply(message, null, Markup
+        ctx.reply('Load...', null, Markup
             .keyboard([
                 'Расписание',
                 'Ссылка на расписание pdf',

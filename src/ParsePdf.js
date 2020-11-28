@@ -1,22 +1,35 @@
+const { title } = require('process');
+
 const dir = './pdfs/'
 const name = 'schedule.pdf'
+
 const PDFExtract = require('pdf.js-extract').PDFExtract;
 const pdfExtract = new PDFExtract();
 const options = {
     firstPage: 2
 };
+
+let [month, date] = new Date().toLocaleDateString("en-US").split("/")
+const numDay = new Date().getDay()
+
 const predmets = ['Ин. язык', 'Родн. литерат', 'Физкультура']
+
 let firstPara = ''
 let secondPara = ''
 let nextPara = ''
 let lastPara = ''
 
+const getDate = () => {
+    if (numDay === 6) return parseInt(date) + 2
+    if (numDay === 7) return parseInt(date) + 1
+    return date
+}
 module.exports.parse = (callback) => {
     pdfExtract.extract(dir + name, options, (err, data) => {
         if (err) return console.log(err);
         const content = data.pages[0].content
         const getPars = (id) => {
-            const title = `${content[id].str}  ${content[id-1].str}  ${content[id-2].str}`
+            // const title = `${content[id].str}  ${content[id-1].str}  ${content[id-2].str}`
             if (
                 (content[id + 12].str !== ' ' || content[id + 12 + 1].str !== ' ') &&
                 (content[id + 12 + 1].str !== ' ' || content[id + 12 + 2].str !== ' ') &&
@@ -145,8 +158,8 @@ module.exports.parse = (callback) => {
 
             }
 
-
-            let result = `${firstPara}\n${secondPara}\n${nextPara}\n${lastPara}`
+            const dateTitle = `Расписание на ${getDate(date)}.${month}`
+            let result = `${dateTitle}\n\n${firstPara}\n${secondPara}\n${nextPara}\n${lastPara}`
             return callback(null, result)
         }
 
