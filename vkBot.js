@@ -2,7 +2,7 @@ const VkBot = require('node-vk-bot-api');
 const Markup = require('node-vk-bot-api/lib/markup');
 const GetPdf = require('./src/GetPdf')
 
-let token = 'f4a8b4ffbdf014595ad6d811a93344e476c55b08fe806d2947de15a3e15e1a982d554ae6600b676caf039'
+let token = '671261439918a5b0ab394ef513c2b9f896bf1b3ce818630e6fc514fa48a94903f15361c8bbe98c287c5f1'
 const bot = new VkBot(token);
 console.log(bot);
 
