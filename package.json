@@ -1,0 +1,26 @@
+{
+    "name": "vkbot",
+    "version": "1.0.0",
+    "description": "",
+    "main": "vkBot.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "nodemon vkBot"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/Selivaniuk/vkBot.git"
+    },
+    "author": "",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/Selivaniuk/vkBot/issues"
+    },
+    "homepage": "https://github.com/Selivaniuk/vkBot#readme",
+    "dependencies": {
+        "download-pdf": "^0.1.6",
+        "jsdom": "^16.4.0",
+        "node-vk-bot-api": "^3.3.7",
+        "pdf.js-extract": "^0.1.4"
+    }
+}
