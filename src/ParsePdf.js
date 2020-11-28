@@ -1,5 +1,3 @@
-const { title } = require('process');
-
 const dir = './pdfs/'
 const name = 'schedule.pdf'
 
