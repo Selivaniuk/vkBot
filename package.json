@@ -5,7 +5,8 @@
     "main": "vkBot.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1", 
-        "start": "nodemon src/vkBot.js --exec"
+        "start": "node src/vkBot.js",
+        "start:dev": "nodemon src/vkBot.js --exec"
     },
     "repository": {
         "type": "git",
