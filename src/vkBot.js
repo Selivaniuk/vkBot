@@ -1,11 +1,12 @@
 const VkBot = require('node-vk-bot-api');
 const Markup = require('node-vk-bot-api/lib/markup');
-const GetPdf = require('./src/GetPdf')
+const GetPdf = require('./GetPdf')
 
 let token = '671261439918a5b0ab394ef513c2b9f896bf1b3ce818630e6fc514fa48a94903f15361c8bbe98c287c5f1'
 
 const bot = new VkBot(token);
-const users = [183694625, 224285444, 168497235]
+//224285444, 168497235
+const users = [183694625]
     // console.log(bot);
 
 
@@ -20,7 +21,7 @@ setInterval(() => {
             })
         }
     })
-}, 3600000);
+}, 3600);
 
 
 bot.command('Начать', (ctx) => {

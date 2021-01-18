@@ -7,23 +7,7 @@ const options = {
 const dir = './pdfs/'
 const name = 'schedule.pdf'
 
-const date = new Date();
-const year = date.getFullYear()
-const month = date.getMonth();
-const numDay = date.getDay();
-const day = date.getDate();
-const hour = date.getHours();
-const maxDay = 32 - new Date(year, month, 32).getDate()
-
-
-const getDateM = () => {
-    if (day === maxDay) {
-        if (hour > 17) return parseInt(month) + 2
-    }
-    return parseInt(month) + 1
-};
-
-module.exports.parse = (d, callback) => {
+module.exports.parse = (title, callback) => {
     pdfExtract.extract(dir + name, options, (err, data) => {
         if (err) return console.log(err);
         const content = data.pages[0].content
@@ -71,9 +55,7 @@ module.exports.parse = (d, callback) => {
                 }
             }
             if (res) {
-                const mmonth = getDateM();
-                const dateTitle = `Расписание на ${d}.${mmonth}`
-                let result = `${dateTitle} \n \n1. ${res[0]} \n2. ${res[1]} \n3. ${res[2]} \n4. ${res[3]?res[3]:''}\n5. ${res[4]?res[4]:''}\n  `
+                let result = `${title} \n \n1. ${res[0]} \n2. ${res[1]} \n3. ${res[2]} \n4. ${res[3]?res[3]:''}\n5. ${res[4]?res[4]:''}\n  `
                 return callback(null, result)
             }
         }
