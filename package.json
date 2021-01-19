@@ -5,7 +5,7 @@
     "main": "vkBot.js",
     "scripts": {
         "test": "echo \"Error: no test specified\" && exit 1", 
-        "start": "node app.js",
+        "start": "set PORT = 3000 && node app.js",
         "start:dev": "nodemon src/vkBot.js --exec"
     },
     "repository": {
