@@ -8,7 +8,7 @@ const bot = new VkBot(token);
 //224285444, 168497235
 const users = [183694625]
     // console.log(bot);
-
+console.log('bot started');
 
 setInterval(() => {
     GetPdf.getNewLink(function(err, response) {
