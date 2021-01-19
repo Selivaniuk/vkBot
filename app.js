@@ -11,6 +11,6 @@ app.get('/', (req, res) => {
 })
 
 app.listen(port,host, () => {
-  console.log(`Example app listening at http://${host}:${port}`)
+  console.log(`listening at http://${host}:${port}`)
   VkBot.startBot()
 })

@@ -10,10 +10,15 @@ const users = [183694625]
 
 module.exports.startBot = () =>{
     console.log('bot starting');
+    let respDay = 0
     setInterval(() => {
+        const date = new Date();
+        const day = date.getDate();
+        if(day===respDay) return
         GetPdf.getNewLink(function(err, response) {
             if (err) return console.log(err);
             if (response) {
+                respDay=day
                 bot.sendMessage(users, 'Доступно новое расписание!');
                 GetPdf.GetPdf(l = false, function(err, response) {
                     if (err) return console.log(err);
