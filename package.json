@@ -4,7 +4,7 @@
     "description": "",
     "main": "vkBot.js",
     "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1", 
+        "test": "echo \"Error: no test specified\" && exit 1",
         "start": "set PORT = 3000 && node app.js",
         "start:dev": "nodemon src/vkBot.js --exec"
     },
@@ -20,6 +20,7 @@
     "homepage": "https://github.com/Selivaniuk/vkBot#readme",
     "dependencies": {
         "download-pdf": "^0.1.6",
+        "express": "^4.17.1",
         "jsdom": "^16.4.0",
         "node-vk-bot-api": "^3.3.7",
         "pdf.js-extract": "^0.1.4"

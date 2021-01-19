@@ -1,10 +1,16 @@
 const VkBot = require('./src/vkBot')
-const http = require('http');
+
+const express = require('express')
+const app = express()
 
 const host = '0.0.0.0';
 const port = process.env.PORT || 3000;
 
-const server = http.createServer(()=>{})
-server.listen(port,host,()=>{
-    console.log('Server running on port 3000')
+app.get('/', (req, res) => {
+  res.send('Hello World!')
+})
+
+app.listen(port,host, () => {
+  console.log(`Example app listening at http://${host}:${port}`)
+  VkBot.startBot()
 })
